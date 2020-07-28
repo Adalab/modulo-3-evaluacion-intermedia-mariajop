@@ -4,8 +4,8 @@ import Pokemon from './Pokemon';
 const List = (props) => {
   const pokemons = props.pokemons.map((pokemon, index) => {
     return (
-      <li key={index}>
-        <Pokemon name={pokemon.name} avatar={pokemon.url} type={pokemon.type} />
+      <li key={pokemon.id}>
+        <Pokemon name={pokemon.name.toUpperCase()} avatar={pokemon.url} types={pokemon.types} />
       </li>
     );
   });
