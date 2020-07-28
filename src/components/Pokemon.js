@@ -1,21 +1,17 @@
 import React from 'react';
 
-class List extends React.Component {
-  render() {
-    console.log(this.props);
+const Pokemon = (props) => {
+  const typesLi = props.pokemon.types.map((type, index) => {
+    return <li key={index}>{type}</li>;
+  });
 
-    const types = this.props.types.map((type, index) => {
-      return <li key={index}>{type}</li>;
-    });
+  return (
+    <>
+      <h2 className="card__title">{props.pokemon.name}</h2>
+      <img src={props.pokemon.url} alt="Pokemon" className="card__img" />
+      <ul className="card__desc">{typesLi}</ul>
+    </>
+  );
+};
 
-    return (
-      <article>
-        <img src={this.props.avatar} alt={this.props.name}></img>
-        <h2>{this.props.name}</h2>
-        <ul>{types}</ul>
-      </article>
-    );
-  }
-}
-
-export default List;
+export default Pokemon;

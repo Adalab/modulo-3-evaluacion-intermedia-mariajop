@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PokeList from './PokeList';
 import pokemonsFromApi from '../data/pokemons.json';
 
 const App = () => {
-  const [pokemons, setPokemons] = useState(pokemonsFromApi);
   return (
     <div>
-      <PokeList pokemons={pokemons} />
+      <h1>Pokemons</h1>
+      <PokeList list={pokemonsFromApi} />
     </div>
   );
 };
